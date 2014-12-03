@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/main_background_image"
+        android:src="@drawable/backgroundzero" />
+
+    <TextView
+        android:id="@+id/titelExpensesScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/titleaddcategoryscreen"
+        android:textColor="#5EA8D1"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/textNameCategoryScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titelExpensesScreen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="@string/categoryNameDescription"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/categoyNameDescription"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textNameCategoryScreen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:gravity="center" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textAvailableForCategoryScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/categoyNameDescription"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/categoryAvailableDescription"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupAvailableFor"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textAvailableForCategoryScreen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" >
+
+        <RadioButton
+            android:id="@+id/radioIncome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/categoryAvailableIncome"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:onClick="radioButtonClicked" />
+
+        <RadioButton
+            android:id="@+id/radioExpenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="-47dp"
+            android:text="@string/categoryAvailableExpenses"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:onClick="radioButtonClicked" />
+    </RadioGroup>
+
+</RelativeLayout>

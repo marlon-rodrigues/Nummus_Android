@@ -1,0 +1,7 @@
+{
+  "/Users/marlongeraldorodriguesviana/Development/Android/AndroidSDK/platforms/android-16/android.jar": {
+    "location": "/Users/marlongeraldorodriguesviana/Development/Android/AndroidSDK/platforms/android-16/android.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027/Users/marlongeraldorodriguesviana/Development/Android/AndroidSDK/platforms/android-16/android.jar\u0027. Neither fingerprint \u00273759f04583966c38396dc100a4021af9cbe0aeba\u0027 nor symbolic name \u0027android\u0027 are known."
+  }
+}

@@ -1,0 +1,8 @@
+package com.redclockapps.nummus;
+
+import android.app.Activity;
+
+public class preferencesActivity extends Activity
+{
+
+}

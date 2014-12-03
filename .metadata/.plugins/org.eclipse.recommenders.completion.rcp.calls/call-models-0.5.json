@@ -1,0 +1,17 @@
+{
+  "/Users/marlongeraldorodriguesviana/Development/Android/Code/workspace-nummus/Nummus/gen": {
+    "location": "/Users/marlongeraldorodriguesviana/Development/Android/Code/workspace-nummus/Nummus/gen",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/marlongeraldorodriguesviana/Development/Android/Code/workspace-nummus/Nummus/gen\u0027. Skipped."
+  },
+  "/Users/marlongeraldorodriguesviana/Development/Android/AndroidSDK/platforms/android-16/android.jar": {
+    "location": "/Users/marlongeraldorodriguesviana/Development/Android/AndroidSDK/platforms/android-16/android.jar",
+    "status": "UNRESOLVED",
+    "error": "No call model found for \u0027/Users/marlongeraldorodriguesviana/Development/Android/AndroidSDK/platforms/android-16/android.jar\u0027. Neither fingerprint \u00273759f04583966c38396dc100a4021af9cbe0aeba\u0027 nor symbolic name \u0027android\u0027 are known."
+  },
+  "/Users/marlongeraldorodriguesviana/Development/Android/Code/workspace-nummus/Nummus/src": {
+    "location": "/Users/marlongeraldorodriguesviana/Development/Android/Code/workspace-nummus/Nummus/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/marlongeraldorodriguesviana/Development/Android/Code/workspace-nummus/Nummus/src\u0027. Skipped."
+  }
+}

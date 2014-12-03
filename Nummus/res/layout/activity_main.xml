@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/main_background_image"
+        android:src="@drawable/backgroundhd" />
+
+    <Button
+        android:id="@+id/buttonGreenPig"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="182dp"
+        android:background="@drawable/greenpigbutton"
+        android:onClick="buttonGreenPigClicked" />
+
+    <Button
+        android:id="@+id/buttonRedPig"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignBaseline="@+id/buttonGreenPig"
+        android:layout_alignBottom="@+id/buttonGreenPig"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/redpigbutton"
+        android:onClick="buttonRedPigClicked" />
+
+    <Button
+        android:id="@+id/buttonBluePig"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignBaseline="@+id/buttonRedPig"
+        android:layout_alignBottom="@+id/buttonRedPig"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/bluepigbutton"
+        android:onClick="buttonBluePigClicked" />
+
+    <Button
+        android:id="@+id/buttonPreferences"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="464dp"
+        android:background="@drawable/preferencesbutton"
+        android:onClick="buttonPreferencesClicked" />
+
+    <TextView
+        android:id="@+id/textSavings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonPreferences"
+        android:layout_alignBottom="@+id/buttonPreferences"
+        android:layout_centerHorizontal="true"
+        android:text="@string/savingsMainScreen"
+        android:textColor="#7097CA"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/textIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonGreenPig"
+        android:layout_below="@+id/buttonGreenPig"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/incomeMainScreen"
+        android:textColor="#7097CA"
+        android:textSize="13sp" />
+
+ 	<TextView
+        android:id="@+id/textExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonRedPig"
+        android:layout_below="@+id/buttonRedPig"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/expenseMainScreen"
+        android:textColor="#7097CA"
+        android:textSize="13sp" />
+        
+	<TextView
+        android:id="@+id/textReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonBluePig"
+        android:layout_below="@+id/buttonBluePig"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/reportsMainScreen"
+        android:textColor="#7097CA"
+        android:textSize="13sp" />
+	
+		<TextView
+		    android:id="@+id/textLoading"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/textExpenses"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="50dp"
+		    android:text="@string/loadingMainScreen"
+		    android:textColor="#7097CA"
+		    android:textSize="13sp" />
+	
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="45dp"
+        android:text="Category"
+        android:textColor="#FFFFFF" 
+        android:textStyle="bold" 
+        android:textSize="40sp"/>
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textCategory"
+        android:layout_below="@+id/textCategory"
+        android:layout_marginTop="-5dp"
+        android:text="Date"
+        android:textColor="#FFFFFF" 
+        android:textSize="35sp"/>
+    
+	<TextView
+        android:id="@+id/textAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="false"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="75dp"
+        android:text="Amount"
+        android:textColor="#FFFFFF" 
+        android:textStyle="bold" 
+        android:textSize="40sp"/>
+	
+    <TextView
+        android:id="@+id/textAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textAmount"
+        android:layout_below="@+id/textAmount"
+        android:layout_marginTop="-5dp"
+        android:text="Account"
+        android:textColor="#FFFFFF" 
+        android:textSize="35sp"/>
+    
+	<TextView
+        android:id="@+id/textDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:text=">"
+        android:textColor="#FFFFFF" 
+        android:textSize="50sp"/>
+        
+</RelativeLayout>

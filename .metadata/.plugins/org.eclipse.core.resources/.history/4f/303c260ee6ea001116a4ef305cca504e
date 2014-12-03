@@ -1,0 +1,6 @@
+package com.redclockapps.nummus;
+
+public class preferencesActivity extends Activity
+{
+
+}

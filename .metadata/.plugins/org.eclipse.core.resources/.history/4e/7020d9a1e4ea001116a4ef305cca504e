@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/backgroundExpensesScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/main_background_image"
+        android:src="@drawable/emptybackground" />
+
+    <Button
+        android:id="@+id/settingsButtonPreferencesScreen"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="1065dp"
+        android:background="@drawable/settingsbuttoneffect"
+        android:onClick="settingsButtonClicked" />
+    
+	<Button
+	    android:id="@+id/helpButtonPreferencesScreen"
+	    android:layout_width="140dp"
+	    android:layout_height="140dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="250dp"
+	    android:layout_marginTop="1064dp"
+	    android:background="@drawable/helpbuttoneffect"
+	    android:onClick="helpButtonClicked" />
+        
+	<Button
+	    android:id="@+id/aboutButtonPreferencesScreen"
+	    android:layout_width="140dp"
+	    android:layout_height="140dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="425dp"
+	    android:layout_marginTop="1064dp"
+	    android:background="@drawable/aboutbuttoneffect"
+	    android:onClick="aboutButtonClicked" />
+            
+	<Button
+	    android:id="@+id/rateButtonPreferencesScreen"
+	    android:layout_width="140dp"
+	    android:layout_height="140dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="600dp"
+	    android:layout_marginTop="1067dp"
+	    android:background="@drawable/ratebuttoneffect"
+	    android:onClick="rateButtonClicked" />
+
+	<TextView
+	    android:id="@+id/titelPreferencesScreen"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="false"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="30dp"
+	    android:text="@string/titlePreferencesScreen"
+	    android:textColor="#5EA8D1"
+	    android:textSize="45sp" />
+
+	<RelativeLayout
+	    android:id="@+id/settingsSubViewPreferencesScreen"
+	    android:layout_width="630dp"
+	    android:layout_height="920dp"
+	    android:layout_below="@+id/titelPreferencesScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="visible" 
+	    android:layout_marginTop="30dp">
+	    
+	    <TextView
+	        android:id="@+id/textDescriptionSound"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="100dp"
+	        android:layout_marginBottom="50dp"
+	        android:text="@string/soundDescriptionPreferencesScreen"
+	        android:textColor="#000000"
+	        android:textSize="28dp" />
+
+	    <ToggleButton
+	        android:id="@+id/toggleButtonSound"
+	        android:layout_width="95dp"
+	        android:layout_height="85dp"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="150dp"
+	        android:textSize="20dp" />
+
+	    <TextView
+	        android:id="@+id/textDescriptionShowByP1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textDescriptionSound"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="110dp"
+	        android:text="@string/showByDescriptionPreferencesScreenP1"
+	        android:textColor="#000000"
+	        android:textSize="28dp" />
+
+	    <TextView
+	        android:id="@+id/textDescriptionShowByP2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textDescriptionShowByP1"
+	        android:layout_centerHorizontal="true"
+	        android:text="@string/showByDescriptionPreferencesScreenP2"
+	        android:textColor="#000000"
+	        android:textSize="28dp" />
+
+	    <RadioGroup
+	        android:id="@+id/radioGroupShowBy"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="20dp"
+	        android:layout_below="@+id/textDescriptionShowByP2" >
+
+	        <RadioButton
+	            android:id="@+id/radioMonth"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            
+	            android:checked="true"
+	            android:text="@string/showByRadioMonth"
+	            android:textColor="#000000"
+	            android:textSize="28dp" />
+
+	        <RadioButton
+	            android:id="@+id/radioYear"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="-48dp"
+	            android:layout_marginLeft="140dp"
+	            android:text="@string/showByYear"
+	            android:textColor="#000000"
+	            android:textSize="28dp" />
+
+	        <RadioButton
+	            android:id="@+id/radioTotal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	           	android:layout_marginTop="-47dp"
+	            android:layout_marginLeft="250dp"
+	            android:text="@string/showByTotal"
+	            android:textColor="#000000"
+	            android:textSize="28dp" />
+	    </RadioGroup>
+
+	    <Button
+	        android:id="@+id/buttonAddCategory"
+	        android:layout_width="315dp"
+	        android:layout_height="74dp"
+	        android:layout_below="@+id/radioGroupShowBy"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="50dp"
+	        android:background="@drawable/addcategorybuttoneffect"
+	        android:onClick="addCategoryButtonClicked" />
+
+	</RelativeLayout>
+	
+	<RelativeLayout
+		    android:id="@+id/helpSubViewPreferencesScreen"
+		    android:layout_width="630dp"
+		    android:layout_height="920dp"
+		    android:layout_below="@+id/titelPreferencesScreen"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="30dp"
+		    android:visibility="invisible" >
+
+	    <Button
+	        android:id="@+id/buttonSupport"
+	        android:layout_width="315dp"
+	        android:layout_height="74dp"
+	        android:layout_marginTop="640dp"
+	        android:layout_centerHorizontal="true"
+	        android:background="@drawable/supportbuttoneffect"
+	        android:onClick="requestSupportButtonClicked" />
+
+	    <TextView
+	        android:id="@+id/textViewHelp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="610dp"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="5dp"
+	        android:text="@string/helpPreferencesScreen"
+	        android:textColor="#000000"
+	        android:textSize="23dp" />
+
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/aboutSubViewPreferencesScreen"
+	    android:layout_width="630dp"
+	    android:layout_height="920dp"
+	    android:layout_below="@+id/titelPreferencesScreen"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="30dp"
+	    android:visibility="invisible" >
+
+	    <ImageView
+	        android:id="@+id/imageNummusTitle"
+	        android:layout_width="400dp"
+	        android:layout_height="101dp"
+	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="80dp"
+	        android:contentDescription="@string/imageNummusTitle"
+	        android:src="@drawable/nummustitle" />
+
+	    <TextView
+	        android:id="@+id/textViewAppVersion"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/imageNummusTitle"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="50dp"
+	        android:text="@string/appVersionPreferencesScreen"
+	        android:textColor="#000000"
+	        android:textSize="28dp" />
+
+	    <TextView
+	        android:id="@+id/TextViewAppDate"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textViewAppVersion"
+	        android:layout_marginTop="10dp"
+	        android:layout_centerHorizontal="true"
+	        android:text="@string/appDatePreferencesScreen"
+	        android:textColor="#000000"
+	        android:textSize="24dp" />
+
+	    <Button
+	        android:id="@+id/buttonShare"
+	        android:layout_width="315dp"
+	        android:layout_height="74dp"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="350dp"
+	        android:background="@drawable/sharebuttoneffect"
+	        android:onClick="shareButtonClicked" />
+
+	    <TextView
+	        android:id="@+id/TextViewMoreInfo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/buttonShare"
+	        android:layout_marginTop="80dp"
+	        android:text="@string/moreInfoPreferencesScreen"
+	        android:textColor="#000000"
+	        android:textSize="20dp" />
+
+	    <TextView
+	        android:id="@+id/TextViewInfoWebSite"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/TextViewMoreInfo"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="15dp"
+	        android:text="@string/infoWebSitePreferencesScreen"
+	        android:textColor="#000000"
+	        android:textSize="20dp" />
+
+	    <TextView
+	        android:id="@+id/TextViewRights"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/TextViewInfoWebSite"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="16dp"
+	        android:text="@string/appRightsPreferenceScreen"
+	        android:textColor="#000000"
+	        android:textSize="20dp" />
+
+	</RelativeLayout>
+
+</RelativeLayout>

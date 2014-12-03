@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/backgroundExpensesScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/main_background_image"
+        android:src="@drawable/emptybackground" />
+
+    <Button
+        android:id="@+id/categoryButtonExpensesScreen"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="460dp"
+        android:background="@drawable/whatforbuttoneffect"
+        android:onClick="categoryButtonExpensesClicked" />
+    
+	<Button
+	    android:id="@+id/amountButtonExpensesScreen"
+	    android:layout_width="65dp"
+	    android:layout_height="65dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="92dp"
+	    android:layout_marginTop="459dp"
+	    android:background="@drawable/howmuchbuttoneffect"
+	    android:onClick="amountButtonExpensesClicked" />
+        
+	<Button
+	    android:id="@+id/dateButtonExpensesScreen"
+	    android:layout_width="65dp"
+	    android:layout_height="65dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="164dp"
+	    android:layout_marginTop="457dp"
+	    android:background="@drawable/whenbuttoneffect"
+	    android:onClick="dateButtonExpensesClicked" />
+            
+	<Button
+	    android:id="@+id/accountButtonExpensesScreen"
+	    android:layout_width="65dp"
+	    android:layout_height="65dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="236dp"
+	    android:layout_marginTop="461dp"
+	    android:background="@drawable/wherefrombuttoneffect"
+	    android:onClick="accountButtonExpensesClicked" />
+
+	<TextView
+	    android:id="@+id/titelExpensesScreen"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="false"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="8dp"
+	    android:text="@string/titleExpensesScreen"
+	    android:textColor="#5EA8D1"
+	    android:textSize="15sp" />
+	
+	<Button
+	    android:id="@+id/addCategoryButtonExpensesScreen"
+	    style="?android:attr/buttonStyleSmall"
+	    android:layout_width="33dp"
+	    android:layout_height="30dp"
+	    android:layout_alignParentTop="false"
+	    android:layout_alignRight="@+id/accountButtonExpensesScreen"
+	    android:layout_marginTop="5dp"
+	    android:background="@drawable/plusbuttoneffect"
+	    android:onClick="addCategoryButtonExpensesClicked" />
+
+	<RelativeLayout
+	    android:id="@+id/categorySubViewExpensesScreen"
+	    android:layout_width="270dp"
+	    android:layout_height="380dp"
+	    android:layout_below="@+id/titelExpensesScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" 
+	    android:layout_marginTop="30dp">
+
+		<ListView
+		    android:id="@+id/listViewCategoriesExpensesScreen"
+		    android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:layout_centerHorizontal="true"
+			android:background="@drawable/list_view_rounded_corners" 
+		    android:divider="#FFFFFF"
+		    android:dividerHeight="1dp"
+		    android:listSelector="@color/list_view_income_selector"  >
+		</ListView>
+
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/amountSubViewExpensesScreen"
+	    android:layout_width="300dp"
+	    android:layout_height="420dp"
+	    android:layout_below="@+id/titelExpensesScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" >
+
+		<EditText
+		    android:id="@+id/amountTextFieldExpensesScreen"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentTop="true"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="147dp"
+		    android:ems="10"
+		    android:inputType="numberDecimal"
+		    android:gravity="center" />
+
+		<TextView
+		    android:id="@+id/textDescriptionAmountExpensesScreen"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBottom="@+id/amountTextFieldExpensesScreen"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginBottom="66dp"
+		    android:text="@string/amountDescriptionIncExpScreen" 
+		    android:textColor="#000000" />
+
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/dateSubViewExpensesScreen"
+	    android:layout_width="300dp"
+	    android:layout_height="420dp"
+	    android:layout_below="@+id/titelExpensesScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" >
+
+	    <TextView
+	        android:id="@+id/textDescriptionDateExpensesScreen"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="68dp"
+	        android:text="@string/dateDescriptionIncomeScreen"
+	        android:textColor="#000000" />
+
+	    <TextView
+	        android:id="@+id/dateTextFieldExpensesScreen"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textDescriptionDateExpensesScreen"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="19dp"
+	        android:text="August 8, 2012"
+	        android:textColor="#000000" />
+
+	    <DatePicker
+	        android:id="@+id/datePickerExpensesScreen"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/dateTextFieldExpensesScreen"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="31dp" />
+
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/accountSubViewExpensesScreen"
+	    android:layout_width="270dp"
+	    android:layout_height="260dp"
+	    android:layout_below="@+id/titelExpensesScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" 
+	    android:layout_marginTop="100dp">
+
+		<ListView
+		    android:id="@+id/listViewAccountsExpensesScreen"
+		    android:layout_width="250dp"
+		    android:layout_height="wrap_content"
+		    android:layout_centerHorizontal="true" 
+			android:background="@drawable/list_view_rounded_corners" 
+		    android:divider="#FFFFFF"
+		    android:dividerHeight="1dp"
+		    android:listSelector="@color/list_view_income_selector" >
+		</ListView>
+
+	</RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/backgroundIncomeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/main_background_image"
+        android:src="@drawable/emptybackground" />
+
+    <Button
+        android:id="@+id/categoryButtonIncomeScreen"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="840dp"
+        android:background="@drawable/whatforbuttoneffect"
+        android:onClick="categoryButtonClicked" />
+    
+	<Button
+	    android:id="@+id/amountButtonIncomeScreen"
+	    android:layout_width="110dp"
+	    android:layout_height="110dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="182dp"
+	    android:layout_marginTop="838dp"
+	    android:background="@drawable/howmuchbuttoneffect"
+	    android:onClick="amountButtonClicked" />
+        
+	<Button
+	    android:id="@+id/dateButtonIncomeScreen"
+	    android:layout_width="110dp"
+	    android:layout_height="110dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="315dp"
+	    android:layout_marginTop="835dp"
+	    android:background="@drawable/whenbuttoneffect"
+	    android:onClick="dateButtonClicked" />
+            
+	<Button
+	    android:id="@+id/accountButtonIncomeScreen"
+	    android:layout_width="110dp"
+	    android:layout_height="110dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="450dp"
+	    android:layout_marginTop="843dp"
+	    android:background="@drawable/wheretobuttoneffect"
+	    android:onClick="accountButtonClicked" />
+
+	<TextView
+	    android:id="@+id/titelIncomeScreen"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="false"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="30dp"
+	    android:text="@string/titleIncomeScreen"
+	    android:textColor="#5EA8D1"
+        android:textSize="30sp" />
+	
+	<Button
+	    android:id="@+id/addCategoryButtonIncomeScreen"
+	    style="?android:attr/buttonStyleSmall"
+	    android:layout_width="78dp"
+	    android:layout_height="75dp"
+	    android:layout_alignParentTop="false"
+	    android:layout_alignRight="@+id/accountButtonIncomeScreen"
+	    android:layout_marginTop="23dp"
+	    android:background="@drawable/plusbuttoneffect"
+	    android:onClick="addCategoryButtonClicked" />
+
+	<RelativeLayout
+	    android:id="@+id/categorySubViewIncomeScreen"
+	    android:layout_width="520dp"
+	    android:layout_height="670dp"
+	    android:layout_below="@+id/titelIncomeScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" 
+	    android:layout_marginTop="70dp">
+
+		<ListView
+		    android:id="@+id/listViewCategoriesIncomeScreen"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" 
+		    android:background="@drawable/list_view_rounded_corners" 
+		    android:divider="#FFFFFF"
+		    android:dividerHeight="1dp"
+		    android:listSelector="@color/list_view_income_selector" >
+		</ListView>
+
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/amountSubViewIncomeScreen"
+	    android:layout_width="550dp"
+	    android:layout_height="720dp"
+	    android:layout_below="@+id/titelIncomeScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" >
+
+		<EditText
+		    android:id="@+id/amountTextFieldIncomeScreen"
+		    android:layout_width="270dp"
+		    android:layout_height="45dp"
+		    android:layout_alignParentTop="true"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="300dp"
+		    android:ems="10"
+		    android:inputType="numberDecimal"
+		    android:gravity="center" />
+
+		<TextView
+		    android:id="@+id/textDescriptionAmountIncomeScreen"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBottom="@+id/amountTextFieldIncomeScreen"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginBottom="66dp"
+		    android:text="@string/amountDescriptionIncExpScreen" 
+		    android:textColor="#000000"
+		    android:textSize="28sp" />
+
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/dateSubViewIncomeScreen"
+	    android:layout_width="550dp"
+	    android:layout_height="720dp"
+	    android:layout_below="@+id/titelIncomeScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" >
+
+	    <TextView
+	        android:id="@+id/textDescriptionDateIncomeScreen"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="220dp"
+	        android:text="@string/dateDescriptionIncomeScreen"
+	        android:textColor="#000000"
+	        android:textSize="28sp" />
+
+	    <TextView
+	        android:id="@+id/dateTextFieldIncomeScreen"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textDescriptionDateIncomeScreen"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="19dp"
+	        android:text="August 8, 2012"
+	        android:textColor="#000000"
+	        android:textSize="28sp" />
+	    
+		<DatePicker
+	        android:id="@+id/datePickerIncomeScreen"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/dateTextFieldIncomeScreen"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="31dp" />
+
+	</RelativeLayout>
+	
+	<RelativeLayout
+	    android:id="@+id/accountSubViewIncomeScreen"
+	    android:layout_width="520dp"
+	    android:layout_height="500dp"
+	    android:layout_below="@+id/titelIncomeScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" 
+	    android:layout_marginTop="190dp">
+
+		<ListView
+		    android:id="@+id/listViewAccountsIncomeScreen"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" 
+		    android:background="@drawable/list_view_rounded_corners" 
+		    android:divider="#FFFFFF"
+		    android:dividerHeight="1dp"
+		    android:listSelector="@color/list_view_income_selector" >
+		</ListView>
+
+	</RelativeLayout>
+
+</RelativeLayout>

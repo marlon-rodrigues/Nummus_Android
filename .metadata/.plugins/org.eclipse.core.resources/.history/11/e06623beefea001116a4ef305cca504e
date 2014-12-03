@@ -1,0 +1,16 @@
+package com.redclockapps.nummus;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.GestureDetector;
+
+public class preferencesActivity extends Activity
+{
+	@Override
+    public void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        //getWindow().setWindowAnimations(android.R.style.Animation_Toast);
+        setContentView(R.layout.preferences_screen);
+    }
+}

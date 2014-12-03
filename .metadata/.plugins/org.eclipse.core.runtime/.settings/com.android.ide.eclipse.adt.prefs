@@ -1,0 +1,5 @@
+com.android.ide.eclipse.adt.configmanager.config=500
+com.android.ide.eclipse.adt.configmanager.name=150
+com.android.ide.eclipse.adt.fixLegacyEditors=1
+com.android.ide.eclipse.adt.sdk=/Users/marlongeraldorodriguesviana/Development/Android/AndroidSDK
+eclipse.preferences.version=1

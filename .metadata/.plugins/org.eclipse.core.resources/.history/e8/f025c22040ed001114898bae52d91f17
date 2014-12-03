@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/backgroundReportScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/main_background_image"
+        android:src="@drawable/emptybackground" />
+
+    <Button
+        android:id="@+id/incomeButtonReportScreen"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="false"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="1065dp"
+        android:background="@drawable/incomebuttoneffect"
+        android:onClick="incomeButtonClicked" />
+    
+	<Button
+	    android:id="@+id/expensesButtonReportScreen"
+	    android:layout_width="140dp"
+	    android:layout_height="140dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="340dp"
+	    android:layout_marginTop="1065dp"
+	    android:background="@drawable/expensesbuttoneffect"
+	    android:onClick="expensesButtonClicked" />
+        
+	<Button
+	    android:id="@+id/reportButtonReportScreen"
+	    android:layout_width="140dp"
+	    android:layout_height="140dp"
+	    android:layout_alignParentBottom="false"
+	    android:layout_alignParentLeft="false"
+	    android:layout_marginLeft="520dp"
+	    android:layout_marginTop="1070dp"
+	    android:background="@drawable/reportbuttoneffect"
+	    android:onClick="reportButtonClicked" />
+
+	<TextView
+	    android:id="@+id/titelReportScreen"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentTop="false"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="30dp"
+	    android:text="@string/reportsTitleIncome"
+	    android:textColor="#5EA8D1"
+	    android:textSize="45sp" />
+	
+<!--********************************Income***********************************-->
+	<RelativeLayout
+	    android:id="@+id/incomeSubViewReportScreen"
+	    android:layout_width="680dp"
+	    android:layout_height="950dp"
+	    android:layout_below="@+id/titelReportScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="visible" 
+	    android:layout_marginTop="5dp">
+
+		<Button
+		    android:id="@+id/buttonDateIncome"
+		    android:layout_width="190dp"
+		    android:layout_height="55dp"
+		    android:layout_marginTop="15dp"
+		    android:layout_marginLeft="30dp"
+		    android:background="@drawable/datebuttoneffect"
+		    android:onClick="dateIncomeButtonClicked" />
+		
+		<Button
+		    android:id="@+id/buttonAccountIncome"
+		    android:layout_width="190dp"
+		    android:layout_height="55dp"
+		    android:layout_marginLeft="245dp"
+		    android:layout_marginTop="15dp"
+		    android:background="@drawable/accountbuttoneffect"
+		    android:onClick="accountIncomeButtonClicked" />
+		
+		<Button
+		    android:id="@+id/buttonCategoryIncome"
+		    android:layout_width="190dp"
+		    android:layout_height="55dp"
+		    android:layout_marginLeft="455dp"
+		    android:layout_marginTop="15dp"
+		    android:background="@drawable/categorybuttoneffect"
+		    android:onClick="categoryIncomeButtonClicked" />
+		
+		<RelativeLayout
+			android:id="@+id/dateIncomeSubViewReportScreen"
+		    android:layout_width="670dp"
+		    android:layout_height="900dp"
+		    android:layout_below="@+id/titelReportScreen"
+		    android:layout_centerHorizontal="true"
+		    android:visibility="invisible" 
+		    android:layout_marginTop="75dp">
+				<Button
+				    android:id="@+id/buttonLeftArrowDateIncome"
+				    android:layout_width="90dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentLeft="true"
+				    android:layout_below="@+id/buttonDateIncome"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginLeft="50dp"
+				    android:background="@drawable/leftarrowbuttoneffect"
+				    android:onClick="lefArrowDateIncomeButtonClicked" />
+			
+				<Button
+				    android:id="@+id/buttonRightArrowDateIncome"
+				    android:layout_width="90dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentRight="true"
+				    android:layout_below="@+id/buttonCategoryIncome"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginRight="50dp"
+				    android:background="@drawable/rightarrowbuttoneffect"
+				    android:onClick="rightArrowDateIncomeButtonClicked" />
+			
+				<TextView
+			        android:id="@+id/textDateIncome"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/buttonAccountIncome"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="23dp"
+			        android:text="date"
+			        android:textColor="#000000"
+			        android:textSize="40sp" />
+				
+				<ListView
+				    android:id="@+id/listViewDateIncome"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="95dp" 
+					android:background="@drawable/list_view_rounded_corners" 
+				    android:divider="#FFFFFF"
+				    android:dividerHeight="1dp"
+				    android:listSelector="@color/list_view_income_selector" >
+				</ListView>
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/accountIncomeSubViewReportScreen"
+		    android:layout_width="670dp"
+		    android:layout_height="900dp"
+		    android:layout_below="@+id/titelReportScreen"
+		    android:layout_centerHorizontal="true"
+		    android:visibility="visible" 
+		    android:layout_marginTop="75dp">
+				<Button
+				    android:id="@+id/buttonLeftArrowAccounIncome"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentLeft="true"
+				    android:layout_below="@+id/buttonDateIncome"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginLeft="50dp"
+				    android:background="@drawable/leftarrowbuttoneffect"
+				    android:onClick="lefArrowAccountIncomeButtonClicked" />
+			
+				<Button
+				    android:id="@+id/buttonRightArrowAccountIncome"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentRight="true"
+				    android:layout_below="@+id/buttonCategoryIncome"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginRight="50dp"
+				    android:background="@drawable/rightarrowbuttoneffect"
+				    android:onClick="rightArrowAccountIncomeButtonClicked" />
+			
+				<TextView
+			        android:id="@+id/textAccountIncome"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/buttonAccountIncome"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="23dp"
+			        android:text="account"
+			        android:textColor="#000000"
+			        android:textSize="40sp" />
+				
+				<TextView
+			        android:id="@+id/textTotalAccountIncome"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/textAccountIncome"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="15dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="35sp" />
+
+				<ImageView
+				    android:id="@+id/imageViewIncomeGraph1"
+				    android:layout_width="45dp"
+				    android:layout_height="45dp"
+				    android:layout_alignParentBottom="true"
+				    android:layout_alignLeft="@+id/buttonLeftArrowAccounIncome"
+				    android:layout_marginBottom="160dp"
+				    android:background="#A2CC7B"
+				    android:visibility="visible" />
+				
+				<TextView
+			        android:id="@+id/textIncomeGraph1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentBottom="true"
+				    android:layout_marginLeft="105dp"
+				    android:layout_marginBottom="160dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="25sp"
+			        android:visibility="visible" />
+				
+				<ImageView
+				    android:id="@+id/imageViewIncomeGraph2"
+				    android:layout_width="45dp"
+				    android:layout_height="45dp"
+				    android:layout_alignParentBottom="true"
+				    android:layout_alignLeft="@+id/buttonLeftArrowAccounIncome"
+				    android:layout_marginBottom="110dp"
+				    android:background="#A2CC7B"
+				    android:visibility="visible" />
+				
+				<TextView
+			        android:id="@+id/textIncomeGraph2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentBottom="true"
+				    android:layout_marginLeft="105dp"
+				    android:layout_marginBottom="110dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="25sp"
+			        android:visibility="visible" />
+				
+				<ImageView
+				    android:id="@+id/imageViewIncomeGraph3"
+				    android:layout_width="45dp"
+				    android:layout_height="45dp"
+				    android:layout_alignParentBottom="true"
+				    android:layout_alignLeft="@+id/buttonLeftArrowAccounIncome"
+				    android:layout_marginBottom="60dp"
+				    android:background="#A2CC7B"
+				    android:visibility="visible" />
+				
+				<TextView
+			        android:id="@+id/textIncomeGraph3"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentBottom="true"
+				    android:layout_marginLeft="105dp"
+				    android:layout_marginBottom="60dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="25sp"
+			        android:visibility="visible" />
+				
+				<ImageView
+				    android:id="@+id/imageViewIncomeGraph4"
+				    android:layout_width="45dp"
+				    android:layout_height="45dp"
+				    android:layout_alignParentBottom="true"
+				    android:layout_alignLeft="@+id/buttonLeftArrowAccounIncome"
+				    android:layout_marginBottom="10dp"
+				    android:background="#A2CC7B"
+				    android:visibility="visible" />
+				
+				<TextView
+				    android:id="@+id/textIncomeGraph4"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_alignParentBottom="true"
+				    android:layout_marginBottom="10dp"
+				    android:layout_marginLeft="105dp"
+				    android:fitsSystemWindows="true"
+				    android:text="Total Income"
+				    android:textColor="#000000"
+				    android:textSize="25sp"
+				    android:visibility="visible" />
+				
+				<RelativeLayout
+				    android:id="@+id/graphAccountIncome"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerHorizontal="true"
+				    android:layout_alignBottom="@+id/textTotalAccountIncome"
+				    android:layout_marginBottom="-410dp">
+				</RelativeLayout>
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/categoryIncomeSubViewReportScreen"
+		    android:layout_width="670dp"
+		    android:layout_height="900dp"
+		    android:layout_below="@+id/titelReportScreen"
+		    android:layout_centerHorizontal="true"
+		    android:visibility="invisible" 
+		    android:layout_marginTop="75dp">
+				<Button
+				    android:id="@+id/buttonLeftArrowCategoryIncome"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentLeft="true"
+				    android:layout_below="@+id/buttonDateIncome"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginLeft="50dp"
+				    android:background="@drawable/leftarrowbuttoneffect"
+				    android:onClick="lefArrowCategoryIncomeButtonClicked" />
+			
+				<Button
+				    android:id="@+id/buttonRightArrowCategoryIncome"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentRight="true"
+				    android:layout_below="@+id/buttonCategoryIncome"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginRight="50dp"
+				    android:background="@drawable/rightarrowbuttoneffect"
+				    android:onClick="rightArrowCategoryIncomeButtonClicked" />
+			
+				<TextView
+			        android:id="@+id/textCategoryIncome"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/buttonAccountIncome"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="23dp"
+			        android:text="date"
+			        android:textColor="#000000"
+			        android:textSize="40sp" />
+				
+				<TextView
+			        android:id="@+id/textTotalCategoryIncome"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/textCategoryIncome"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="15dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="35sp" />
+				
+				<ListView
+				    android:id="@+id/listViewCategoryIncome"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="140dp" 
+					android:background="@drawable/list_view_rounded_corners" 
+				    android:divider="#FFFFFF"
+				    android:dividerHeight="1dp"
+				    android:listSelector="@color/list_view_income_selector" >
+				</ListView>
+		</RelativeLayout>
+	</RelativeLayout>
+
+<!--********************************Expenses***********************************-->
+	<RelativeLayout
+	    android:id="@+id/expensesSubViewReportScreen"
+	    android:layout_width="680dp"
+	    android:layout_height="950dp"
+	    android:layout_below="@+id/titelReportScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" 
+	    android:layout_marginTop="5dp">
+
+		<Button
+		    android:id="@+id/buttonDateExpenses"
+		    android:layout_width="190dp"
+		    android:layout_height="55dp"
+		    android:layout_marginTop="15dp"
+		    android:layout_marginLeft="30dp"
+		    android:background="@drawable/datebuttoneffect"
+		    android:onClick="dateExpensesButtonClicked" />
+		
+		<Button
+		    android:id="@+id/buttonAccountExpenses"
+		    android:layout_width="190dp"
+		    android:layout_height="55dp"
+		    android:layout_marginLeft="245dp"
+		    android:layout_marginTop="15dp"
+		    android:background="@drawable/accountbuttoneffect"
+		    android:onClick="accountExpensesButtonClicked" />
+		
+		<Button
+		    android:id="@+id/buttonCategoryExpenses"
+		    android:layout_width="190dp"
+		    android:layout_height="55dp"
+		    android:layout_marginLeft="455dp"
+		    android:layout_marginTop="15dp"
+		    android:background="@drawable/categorybuttoneffect"
+		    android:onClick="categoryExpensesButtonClicked" />
+		
+		<RelativeLayout
+			android:id="@+id/dateExpensesSubViewReportScreen"
+		    android:layout_width="670dp"
+		    android:layout_height="900dp"
+		    android:layout_below="@+id/titelReportScreen"
+		    android:layout_centerHorizontal="true"
+		    android:visibility="invisible" 
+		    android:layout_marginTop="75dp">
+				<Button
+				    android:id="@+id/buttonLeftArrowDateExpenses"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentLeft="true"
+				    android:layout_below="@+id/buttonDateExpenses"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginLeft="50dp"
+				    android:background="@drawable/leftarrowbuttoneffect"
+				    android:onClick="lefArrowDateExpensesButtonClicked" />
+			
+				<Button
+				    android:id="@+id/buttonRightArrowDateExpenses"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentRight="true"
+				    android:layout_below="@+id/buttonCategoryExpenses"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginRight="50dp"
+				    android:background="@drawable/rightarrowbuttoneffect"
+				    android:onClick="rightArrowDateExpensesButtonClicked" />
+			
+				<TextView
+			        android:id="@+id/textDateExpenses"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/buttonAccountExpenses"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="23dp"
+			        android:text="date"
+			        android:textColor="#000000"
+			        android:textSize="40sp" />
+				
+				<ListView
+				    android:id="@+id/listViewDateExpenses"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="95dp" 
+					android:background="@drawable/list_view_rounded_corners" 
+				    android:divider="#FFFFFF"
+				    android:dividerHeight="1dp"
+				    android:listSelector="@color/list_view_income_selector" >
+				</ListView>
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/accountExpensesSubViewReportScreen"
+		    android:layout_width="670dp"
+		    android:layout_height="900dp"
+		    android:layout_below="@+id/titelReportScreen"
+		    android:layout_centerHorizontal="true"
+		    android:visibility="invisible" 
+		    android:layout_marginTop="75dp">
+				<Button
+				    android:id="@+id/buttonLeftArrowAccounExpenses"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentLeft="true"
+				    android:layout_below="@+id/buttonDateExpenses"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginLeft="50dp"
+				    android:background="@drawable/leftarrowbuttoneffect"
+				    android:onClick="lefArrowAccountExpensesButtonClicked" />
+			
+				<Button
+				    android:id="@+id/buttonRightArrowAccountExpenses"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentRight="true"
+				    android:layout_below="@+id/buttonCategoryExpenses"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginRight="50dp"
+				    android:background="@drawable/rightarrowbuttoneffect"
+				    android:onClick="rightArrowAccountExpensesButtonClicked" />
+			
+				<TextView
+			        android:id="@+id/textAccountExpenses"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/buttonAccountExpenses"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="23dp"
+			        android:text="account"
+			        android:textColor="#000000"
+			        android:textSize="40sp" />
+				
+				<TextView
+			        android:id="@+id/textTotalAccountExpenses"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/textAccountExpenses"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="15dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="35sp" />
+
+				<ImageView
+				    android:id="@+id/imageViewExpensesGraph1"
+				    android:layout_width="45dp"
+				    android:layout_height="45dp"
+				    android:layout_alignParentBottom="true"
+				    android:layout_alignLeft="@+id/buttonLeftArrowAccounExpenses"
+				    android:layout_marginBottom="160dp"
+				    android:background="#A2CC7B"
+				    android:visibility="visible" />
+				
+				<TextView
+			        android:id="@+id/textExpensesGraph1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentBottom="true"
+				    android:layout_marginLeft="105dp"
+				    android:layout_marginBottom="160dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="25sp"
+			        android:visibility="visible" />
+				
+				<ImageView
+				    android:id="@+id/imageViewExpensesGraph2"
+				    android:layout_width="45dp"
+				    android:layout_height="45dp"
+				    android:layout_alignParentBottom="true"
+				    android:layout_alignLeft="@+id/buttonLeftArrowAccounExpenses"
+				    android:layout_marginBottom="110dp"
+				    android:background="#A2CC7B"
+				    android:visibility="visible" />
+				
+				<TextView
+			        android:id="@+id/textExpensesGraph2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentBottom="true"
+				    android:layout_marginLeft="105dp"
+				    android:layout_marginBottom="110dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="25sp"
+			        android:visibility="visible" />
+				
+				<ImageView
+				    android:id="@+id/imageViewExpensesGraph3"
+				    android:layout_width="45dp"
+				    android:layout_height="45dp"
+				    android:layout_alignParentBottom="true"
+				    android:layout_alignLeft="@+id/buttonLeftArrowAccounExpenses"
+				    android:layout_marginBottom="60dp"
+				    android:background="#A2CC7B"
+				    android:visibility="visible" />
+				
+				<TextView
+			        android:id="@+id/textExpensesGraph3"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentBottom="true"
+				    android:layout_marginLeft="105dp"
+				    android:layout_marginBottom="60dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="25sp"
+			        android:visibility="visible" />
+				
+				<ImageView
+				    android:id="@+id/imageViewExpensesGraph4"
+				    android:layout_width="45dp"
+				    android:layout_height="45dp"
+				    android:layout_alignParentBottom="true"
+				    android:layout_alignLeft="@+id/buttonLeftArrowAccounExpenses"
+				    android:layout_marginBottom="10dp"
+				    android:background="#A2CC7B"
+				    android:visibility="visible" />
+				
+				<TextView
+				    android:id="@+id/textExpensesGraph4"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_alignParentBottom="true"
+				    android:layout_marginBottom="10dp"
+				    android:layout_marginLeft="105dp"
+				    android:fitsSystemWindows="true"
+				    android:text="Total Income"
+				    android:textColor="#000000"
+				    android:textSize="25sp"
+				    android:visibility="visible" />
+		</RelativeLayout>
+		
+		<RelativeLayout
+			android:id="@+id/categoryExpensesSubViewReportScreen"
+		    android:layout_width="670dp"
+		    android:layout_height="900dp"
+		    android:layout_below="@+id/titelReportScreen"
+		    android:layout_centerHorizontal="true"
+		    android:visibility="invisible" 
+		    android:layout_marginTop="75dp">
+				<Button
+				    android:id="@+id/buttonLeftArrowCategoryExpenses"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentLeft="true"
+				    android:layout_below="@+id/buttonDateExpenses"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginLeft="50dp"
+				    android:background="@drawable/leftarrowbuttoneffect"
+				    android:onClick="lefArrowCategoryExpensesButtonClicked" />
+			
+				<Button
+				    android:id="@+id/buttonRightArrowCategoryExpenses"
+				    android:layout_width="95dp"
+				    android:layout_height="81dp"
+				    android:layout_alignParentRight="true"
+				    android:layout_below="@+id/buttonCategoryExpenses"
+				    android:layout_marginTop="15dp"
+				    android:layout_marginRight="50dp"
+				    android:background="@drawable/rightarrowbuttoneffect"
+				    android:onClick="rightArrowCategoryExpensesButtonClicked" />
+			
+				<TextView
+			        android:id="@+id/textCategoryExpenses"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/buttonAccountExpenses"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="23dp"
+			        android:text="date"
+			        android:textColor="#000000"
+			        android:textSize="40sp" />
+				
+				<TextView
+			        android:id="@+id/textTotalCategoryExpenses"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/textCategoryExpenses"
+			        android:layout_centerHorizontal="true"
+			        android:layout_marginTop="15dp"
+			        android:text="Total Income"
+			        android:textColor="#000000"
+			        android:textSize="35sp" />
+				
+				<ListView
+				    android:id="@+id/listViewCategoryExpenses"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="140dp" 
+					android:background="@drawable/list_view_rounded_corners" 
+				    android:divider="#FFFFFF"
+				    android:dividerHeight="1dp"
+				    android:listSelector="@color/list_view_income_selector" >
+				</ListView>
+		</RelativeLayout>
+	</RelativeLayout>
+		
+<!--********************************Report***********************************-->	
+	<RelativeLayout
+	    android:id="@+id/reportSubViewReportScreen"
+	    android:layout_width="680dp"
+	    android:layout_height="950dp"
+	    android:layout_below="@+id/titelReportScreen"
+	    android:layout_centerHorizontal="true"
+	    android:visibility="invisible" 
+	    android:layout_marginTop="5dp">	
+			
+		<Button
+		    android:id="@+id/buttonSendPDF"
+		    android:layout_width="160dp"
+		    android:layout_height="82dp"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="20dp"
+		    android:background="@drawable/sendpdfbuttoneffect"
+		    android:onClick="sendPDFButtonClicked" />
+	    
+	    <Button
+			android:id="@+id/buttonLeftArrowAccounReport"
+			android:layout_width="95dp"
+			android:layout_height="81dp"
+			android:layout_alignParentLeft="true"
+			android:layout_below="@+id/buttonDateExpenses"
+			android:layout_marginTop="110dp"
+			android:layout_marginLeft="50dp"
+			android:background="@drawable/leftarrowbuttoneffect"
+			android:onClick="lefArrowAccountReportButtonClicked" />
+			
+		<Button
+			android:id="@+id/buttonRightArrowAccountReport"
+			android:layout_width="95dp"
+			android:layout_height="81dp"
+			android:layout_alignParentRight="true"
+			android:layout_below="@+id/buttonCategoryExpenses"
+			android:layout_marginTop="110dp"
+			android:layout_marginRight="50dp"
+			android:background="@drawable/rightarrowbuttoneffect"
+			android:onClick="rightArrowAccountReportButtonClicked" />
+			
+		<TextView
+			android:id="@+id/textReport"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/buttonAccountExpenses"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="117dp"
+			android:text="report"
+			android:textColor="#000000"
+			android:textSize="40sp" />
+				
+		<TextView
+			android:id="@+id/textTotalAccountReport"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/textReport"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="15dp"
+			android:text="Total Savings"
+			android:textColor="#000000"
+			android:textSize="35sp" />
+
+		<ImageView
+			android:id="@+id/imageViewReportGraph1"
+			android:layout_width="45dp"
+			android:layout_height="45dp"
+			android:layout_alignParentBottom="true"
+			android:layout_alignLeft="@+id/buttonLeftArrowAccounReport"
+			android:layout_marginBottom="160dp"
+			android:background="#A2CC7B"
+			android:visibility="visible" />
+				
+		<TextView
+			android:id="@+id/textReportGraph1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_marginLeft="105dp"
+			android:layout_marginBottom="160dp"
+			android:text="Total Income"
+			android:textColor="#000000"
+			android:textSize="25sp"
+			android:visibility="visible" />
+				
+		<ImageView
+			android:id="@+id/imageViewReportGraph2"
+			android:layout_width="45dp"
+			android:layout_height="45dp"
+			android:layout_alignParentBottom="true"
+			android:layout_alignLeft="@+id/buttonLeftArrowAccounReport"
+			android:layout_marginBottom="110dp"
+			android:background="#A2CC7B"
+			android:visibility="visible" />
+				
+		<TextView
+			android:id="@+id/textReportGraph2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_marginLeft="105dp"
+			android:layout_marginBottom="110dp"
+			android:text="Total Income"
+			android:textColor="#000000"
+			android:textSize="25sp"
+			android:visibility="visible" />
+	</RelativeLayout>
+
+</RelativeLayout>

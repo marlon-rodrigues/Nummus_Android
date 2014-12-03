@@ -1,0 +1,234 @@
+package com.redclockapps.nummus;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class incomeExpensesData 
+{
+	//Declares all the table rows
+	static final String incExpId = "_id";
+	static final String incExpCategory = "Category";
+	static final String incExpAmount = "Amount";
+	static final String incExpDate = "Date";
+	static final String incExpAccount = "Account";
+	static final String incExpIsIncome = "isIncome";
+	
+	//Declares the database info
+	static final String DATABASE_NAME = "DBNummus";
+	static final String DATABASE_TABLE = "IncExp";
+	
+	final Context context;
+	
+	DatabaseHelper DBHelper;
+	SQLiteDatabase db;
+	
+	public incomeExpensesData(Context ctx)
+	{
+		this.context = ctx;
+		DBHelper = new DatabaseHelper(context);
+	}
+	
+	private static class DatabaseHelper extends SQLiteOpenHelper
+	{
+
+		public DatabaseHelper(Context context) 
+		{
+			//use version 1 because the app doesnt control the database version
+			super(context, DATABASE_NAME, null, 1);
+		}
+
+		@Override
+		public void onCreate(SQLiteDatabase db) 
+		{
+			//No need to be implemented for now
+		}
+
+		@Override
+		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) 
+		{
+			//No need to be implemented for now
+		}
+	}
+	
+	//opens the database
+	public incomeExpensesData open() throws SQLException
+	{
+		db = DBHelper.getWritableDatabase();
+		return this;
+	}
+	
+	//closes the database
+	public void close()
+	{
+		DBHelper.close();
+	}
+
+	//get initial data to display (sum of incomes and expenses)
+	public Cursor getInitialDataToDisplay(int filter, String month, String year)
+	{	
+		Cursor dataIncExp;
+		
+		//0 - Month, 1 - Year, 2 - Total
+		switch (filter)
+		{
+			case 0:
+				dataIncExp = db.query(DATABASE_TABLE, new String[] {incExpId, incExpAmount, incExpIsIncome}, incExpDate + " LIKE '" + month + "%' AND " + incExpDate + " LIKE '%" + year + "'"  , null, null, null, null, null);
+				break;
+			case 1:
+				dataIncExp = db.query(DATABASE_TABLE, new String[] {incExpId, incExpAmount, incExpIsIncome}, incExpDate + " LIKE '%" + year + "'", null, null, null, null, null);
+				break;
+			case 2:
+				dataIncExp = db.query(DATABASE_TABLE, new String[] {incExpId, incExpAmount, incExpIsIncome}, null, null, null, null, null, null);
+				break;
+			default:
+				dataIncExp = null;
+				break;
+		}
+						
+		return dataIncExp;
+	}
+	
+	//get data to display in report by month and year
+	public Cursor getDataToDisplayInReport(int filter, String month, String year)
+	{
+		Cursor listReport;
+		
+		listReport = db.query(DATABASE_TABLE, new String[] {incExpId, incExpCategory, incExpAmount, incExpDate, incExpAccount, incExpIsIncome}, incExpDate + " LIKE '" + month + "%' AND " + incExpDate + " LIKE '%" + year + "' AND " + incExpIsIncome + "=" + filter, null, null, null, incExpDate);
+		
+		return listReport;
+	}
+	
+	//get data to display in report grouped by account
+	public Cursor getDataToDisplayByAccount(int filter, String month, String year)
+	{
+		Cursor sumAccounts;
+		
+		//it has to return the _id column in order to work with the cursor, why? I HAVE NO IDEA
+		sumAccounts = db.query(DATABASE_TABLE, new String[] {incExpId, incExpAccount, "SUM("+incExpAmount+")"}, incExpDate + " LIKE '" + month + "%' AND " + incExpDate + " LIKE '%" + year + "' AND " + incExpIsIncome + "=" + filter, null, incExpAccount, null, null);
+		
+		return sumAccounts;
+	}
+	
+	//get data to display in report grouped by isIncome
+	public Cursor getDataToDisplayByIsIncome(String month, String year)
+	{
+		Cursor sumIncExp;
+		
+		//it has to return the _id column in order to work with the cursor, why? I HAVE NO IDEA
+		sumIncExp = db.query(DATABASE_TABLE, new String[] {incExpId, incExpIsIncome, "SUM("+incExpAmount+")"}, incExpDate + " LIKE '" + month + "%' AND " + incExpDate + " LIKE '%" + year + "'", null, incExpIsIncome, null, incExpIsIncome);
+		
+		return sumIncExp;
+	}
+	
+	//get data to display in report grouped by category
+	public Cursor getDataToDisplayByCategory(int filter, String month, String year)
+	{
+		Cursor sumCategories;
+		
+		//it has to return the _id column in order to work with the cursor, why? I HAVE NO IDEA
+		sumCategories = db.query(DATABASE_TABLE, new String[] {incExpId, incExpCategory, "SUM("+incExpAmount+")"}, incExpDate + " LIKE '" + month + "%' AND " + incExpDate + " LIKE '%" + year + "' AND " + incExpIsIncome + "=" + filter, null, incExpCategory, null, null);
+		
+		return sumCategories;
+	}
+	
+	//get data to generate text
+	public Cursor getDataForText(int filter, String month, String year)
+	{
+		Cursor	 listIncExp;
+		
+		String orderBy = incExpIsIncome + "," + incExpDate;
+		
+		listIncExp = db.query(DATABASE_TABLE, new String[] {incExpId, incExpCategory, incExpAmount, incExpDate, incExpAccount}, incExpDate + " LIKE '" + month + "%' AND " + incExpDate + " LIKE '%" + year + "'", null, null, null, orderBy);
+		
+		return listIncExp;
+	}
+	
+	//adds income/expenses into the database
+	public boolean addIncomeExpenses(String nameCategory, double amount, String dateSelected, String nameAccount, int isIncome)
+	{
+		boolean _incExpAdded = false;
+		
+		int _idCategory = this.getIdCategory(nameCategory);
+		int _idAccount = this.getIdAccount(nameAccount);
+		
+		ContentValues dataEntry = new ContentValues();
+		
+		dataEntry.put(incExpCategory, _idCategory);
+		dataEntry.put(incExpAmount, amount);
+		dataEntry.put(incExpDate, dateSelected);
+		dataEntry.put(incExpAccount, _idAccount);
+		dataEntry.put(incExpIsIncome, isIncome);
+		
+		if (db.insert(DATABASE_TABLE, null, dataEntry) != -1)
+		{
+			_incExpAdded = true;
+		}
+		
+		return _incExpAdded;
+	}
+	
+	//gets the id of the category
+	public int getIdCategory(String nameCategory)
+	{
+		int _idCategory = -1;
+		
+		Cursor categories = db.query("Ctg000", new String[] {"_id, Name"}, "Name = '" + nameCategory + "'", null, null, null, null, null);
+		
+		if (categories.moveToFirst())
+		{
+			_idCategory = categories.getInt(0);
+		}
+		
+		return _idCategory;
+	}
+	
+	//gets the id of the account
+	public int getIdAccount(String nameAccount)
+	{
+		int _idAccount = -1;
+		
+		Cursor accounts = db.query("Acc000", new String[] {"_id"}, "Name = '" + nameAccount + "'", null, null, null, null, null);
+		
+		if (accounts.moveToFirst())
+		{
+			_idAccount = accounts.getInt(0);
+		}
+		
+		return _idAccount;
+	}
+	
+	//gets the name of the category
+	public String getNameCategory(int idCategory)
+	{
+		String nameCategory = null;
+		
+		Cursor categories = db.query("Ctg000", new String[] {"Name"}, "_id = '" + idCategory + "'", null, null, null, null, null);
+		
+		if (categories.moveToFirst())
+		{
+			nameCategory = categories.getString(0);
+		}
+		
+		return nameCategory;
+	}
+	
+	//gets the name of the account
+	public String getNameAccount(int idAccount)
+	{
+		String nameAccount = null;
+		
+		Cursor accounts = db.query("Acc000", new String[] {"Name"}, "_id = '" + idAccount + "'", null, null, null, null, null);
+		
+		if (accounts.moveToFirst())
+		{
+			nameAccount = accounts.getString(0);
+		}
+		
+		return nameAccount;
+	}
+	
+}

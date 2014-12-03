@@ -1,0 +1,9 @@
+package com.redclockapps.nummus;
+
+public class pieDetailsItem 
+{
+	public int count;
+	public int color;
+	public float percent;
+	public String label;
+}

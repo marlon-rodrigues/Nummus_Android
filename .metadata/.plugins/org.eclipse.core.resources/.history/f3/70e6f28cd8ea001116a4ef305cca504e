@@ -1,0 +1,29 @@
+<resources>
+
+    <string name="app_name">Nummus</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Nummus</string>
+    <string name="main_background_image">mainBackgroundImage</string>
+    <string name="savingsMainScreen">Savings</string>
+    <string name="incomeMainScreen">income</string>
+    <string name="expenseMainScreen">expenses</string>
+    <string name="reportsMainScreen">reports</string>
+    <string name="titleIncomeScreen">add income</string>
+    <string name="amountDescriptionIncExpScreen">how much?</string>
+    <string name="dateDescriptionIncomeScreen">when</string>
+    <string name="titleExpensesScreen">add expenses</string>
+    <string name="titleaddcategoryscreen">add category</string>
+    <string name="categoryNameDescription">name</string>
+    <string name="categoryAvailableDescription">available for</string>
+    <string name="categoryAvailableExpenses">Expenses</string>
+    <string name="categoryAvailableIncome">Income</string>
+    <string name="titlePreferencesScreen">preferences</string>
+    <string name="soundDescriptionPreferencesScreen">sound</string>
+    <string name="showByDescriptionPreferencesScreenP1">show savings</string>
+    <string name="showByDescriptionPreferencesScreenP2">in the main screen by</string>
+    <string name="showByRadioMonth">month</string>
+    <string name="showByYear">year</string>
+    <string name="showByTotal">total</string>
+    <string name="helpPreferencesScreen">helpNummus is a finance application made easy. The first and most important thing to know is to cancel swipe rightto save swipe leftNow that you know the basics here are some detailsThe home screen contains three buttons income, expenses, and reportIncomeOn the income screen, there will be several options to customize your entry. You can add your categories, by pressing the plus button on the top right hand side of the screen, followed by details such as how much, when, and where to (what account it will be transferred to). When you are done, just swipe right to save it or swipe left to cancel.ExpensesOn the expenses screen, there will be also several options to customize your entry. You can add your categories, by pressing the plus button on the top right hand side of the screen, followed by details such as how much, when, and where from (what account it will be transferred from). When you are done, just swipe right to save it or swipe left to cancel.ReportHere you find reports on your total spending money and incoming money. You can see the list of total income and expenses, the subtotal by categories and also the graph of subtotal by accounts. A convenient option is to send a report as a PDF to your email. Swipe left or right to go back to the main screen.PreferencesHere you can set up the application to fit better to your desire. You can turn on /off the sound, define how the savings shown in the main screen will be displayed, and also add categories. Enjoy your app and do not forget to rate us.</string>
+
+</resources>

@@ -1,0 +1,142 @@
+package com.redclockapps.nummus;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RelativeLayout;
+import android.widget.ToggleButton;
+
+public class preferencesActivity extends Activity implements OnGestureListener
+{
+	//creates the local variables and the objects
+	preferencesData prefObj;
+	
+	RelativeLayout settingsView;
+	RelativeLayout helpView;
+	RelativeLayout aboutView;
+	
+	ToggleButton isSoundOn;
+	RadioButton radioMonth;
+	RadioButton radioYear;
+	RadioButton radioTotal;
+	
+	private GestureDetector gestureScanner;
+    @SuppressWarnings("deprecation")
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        //getWindow().setWindowAnimations(android.R.style.Animation_Toast);
+        setContentView(R.layout.preferences_screen);
+        
+        this.additionalOnCreate();
+        
+        gestureScanner = new GestureDetector(this);
+    }
+	
+    @Override
+	public boolean onTouchEvent(MotionEvent event) 
+    {
+    	return gestureScanner.onTouchEvent(event);
+	}
+    
+    private void additionalOnCreate()
+    {
+    	prefObj = new preferencesData(this);
+    	
+    	prefObj.open();
+    	
+    	int isOn = prefObj.getPreferences(0);
+    	int showBy = prefObj.getPreferences(1);
+    	
+    	prefObj.close();
+    	
+    	if (isOn == 0)
+    	{
+    		
+    	}
+    	else
+    	{
+    		
+    	}
+    }
+    
+    //Buttons
+    public void settingsButtonClicked(View view)
+    {
+    	
+    }
+    
+    public void helpButtonClicked(View view)
+    {
+    	
+    }
+    
+    public void aboutButtonClicked(View view)
+    {
+    	
+    }
+    
+    public void rateButtonClicked(View view)
+    {
+    	
+    }
+    
+    public void addCategoryButtonClicked(View view)
+    {
+    	
+    }
+    
+    public void requestSupportButtonClicked(View view)
+    {
+    	
+    }
+    
+    public void shareButtonClicked(View view)
+    {
+    	
+    }
+    
+	public boolean onDown(MotionEvent e) 
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) 
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void onLongPress(MotionEvent e) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) 
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void onShowPress(MotionEvent e) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public boolean onSingleTapUp(MotionEvent e) 
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
+}
+
+
